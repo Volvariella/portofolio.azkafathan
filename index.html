@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Creative portfolio for a visual storyteller specializing in photography, motion, and design."
+    />
+    <title>Azka Fathan | Digital Creative Portfolio</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="logo" href="#home">Azka Fathan</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="dropdown-toggle" href="projects/">Projects</a>
+              <ul class="dropdown-menu">
+                <li><a href="projects/photography/">Photography</a></li>
+                <li><a href="projects/graphic-design/">Graphic Design</a></li>
+                <li><a href="projects/motion-picture/">Motion Picture</a></li>
+              </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="eyebrow">Portofolio</p>
+            <h1>Some moments into memorable visual stories.</h1>
+            <p class="hero__text">
+              I craft cinematic photography, motion-driven campaigns, and bold identity systems
+              for brands, artists, and cultural spaces that want to feel unforgettable.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="projects/">View work</a>
+              <a class="button button--secondary" href="mailto:azkafathan3108@gmail.com">Get in touch</a>
+            </div>
+
+            <ul class="hero__stats" aria-label="Key performance highlights">
+              <li>
+                <strong>4+</strong>
+                <span>Years crafting stories</span>
+              </li>
+              <li>
+                <strong>20+</strong>
+                <span>Works done</span>
+              </li>
+              <li>
+                <strong>10</strong>
+                <span>International features</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__visual" aria-label="Portfolio preview collage">
+            <div class="hero-card hero-card--large">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+                alt="Creative professional working with camera and studio lights"
+                loading="eager"
+              />
+            </div>
+            <div class="hero-card hero-card--small hero-card--top">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"
+                alt="Creative team reviewing design concepts"
+                loading="lazy"
+              />
+            </div>
+            <div class="hero-card hero-card--small hero-card--bottom">
+              <img
+                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=80"
+                alt="Close-up of motion graphics and editorial design work"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-projects section" id="work">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2>Featured projects.</h2>
+          </div>
+
+          <div class="project-cards" id="featuredProjects"></div>
+        </div>
+      </section>
+
+      <section class="video-showcase section">
+        <div class="video-showcase__wrapper">
+          <div class="container">
+            <p class="eyebrow">Motion Picture</p>
+            <h2>Stories that move.</h2>
+          </div>
+          <a href="projects/motion-picture/" aria-label="Watch motion picture projects">
+            <div class="video-showcase__media">
+              <video class="video-showcase__video" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/3936463/3936463-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about__grid">
+          <div class="about__image-wrap">
+            <img
+              src="assets\homepage\IMG_0738_bg.jpg"
+              alt="Portrait of the creative professional"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about__content">
+            <p class="eyebrow">About</p>
+            <h2>Azka Fathan</h2>
+            <p>
+              I’m Azka Fathan, a multidisciplinary creative based in Lisbon. My practice combines
+              editorial photography, brand storytelling, and art direction to build work that feels
+              grounded, expressive, and distinctly memorable.
+            </p>
+            <p>
+              Whether I’m building a campaign, directing a short-form film, or refining a visual
+              identity, I work closely with founders and teams to create resonant work that looks as
+              intentional as it feels.
+            </p>
+
+            <div class="skills">
+              <span>Creative Direction</span>
+              <span>Brand Identity</span>
+              <span>Art Direction</span>
+              <span>Photography</span>
+              <span>Motion Design</span>
+              <span>Content Strategy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/projects.js"></script>
+    <script>
+      fetch('data/projects.json')
+        .then(function(res) { return res.json(); })
+        .then(function(projects) {
+          var featuredIds = ['daily-frame', 'northlight-motion', 'identity-atlas'];
+          var featured = projects.filter(function(p) { return featuredIds.indexOf(p.id) !== -1; });
+          renderCards('featuredProjects', featured, {
+            width: 800,
+            linkResolver: function(p) {
+              if (p.link) {
+                return 'projects/' + p.category + '/' + p.link;
+              }
+              return 'projects/' + p.category + '/';
+            }
+          });
+        })
+        .catch(function(err) {
+          console.error('Failed to load projects:', err);
+        });
+    </script>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer__inner">
+        <p>&copy; 2026 Azka Fathan</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="mailto:azkafathan3108@gmail.com">Email</a>
+          <a href="https://instagram.com/cannedsweetcorn" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://behance.net/azka_fathan" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

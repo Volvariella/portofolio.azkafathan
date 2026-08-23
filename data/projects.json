@@ -1,0 +1,86 @@
+[
+  {
+    "id": "daily-frame",
+    "title": "Yearbook",
+    "category": "photography",
+    "year": "2026",
+    "summary": "A documentary portrait series capturing the quiet rituals and unscripted moments of a senior class during their final year.",
+    "image": "/assets/yearbook/ARS-7910_result.webp",
+    "alt": "Yearbook project preview",
+    "link": "yearbook.html",
+    "gallery": [
+      "/assets/yearbook/ARS-7910_result.webp",
+      "/assets/yearbook/ARS-6691_result.webp",
+      "/assets/yearbook/ARS-7793_result.webp",
+      "/assets/yearbook/ARS-7841_result.webp",
+      "/assets/yearbook/ARS-7894_result.webp"
+    ]
+  },
+  {
+    "id": "quiet-terrain",
+    "title": "Quiet Terrain",
+    "category": "photography",
+    "year": "2025",
+    "summary": "Landscapes with a documentary lens and tactile color stories.",
+    "image": "/assets/yearbook/ARS-7910_result.webp",
+    "alt": "Quiet Terrain project preview",
+    "link": "yearbook.html"
+  },
+  {
+    "id": "engagement",
+    "title": "Engagement",
+    "category": "photography",
+    "year": "2025",
+    "summary": "Intimate moments and quiet connections captured during engagement sessions.",
+    "image": "/assets/engagement/AF-8_result.webp",
+    "alt": "Engagement project preview",
+    "link": "engagement.html",
+    "gallery": [
+      "/assets/engagement/AF-5_result.webp",
+      "/assets/engagement/AF-8_result.webp",
+      "/assets/engagement/AF-14_result.webp",
+      "/assets/engagement/AF-18_result.webp",
+      "/assets/engagement/AF-19_result.webp"
+    ]
+  },
+  {
+    "id": "northlight-motion",
+    "title": "Northlight Motion",
+    "category": "motion-picture",
+    "year": "2025",
+    "summary": "A short-form campaign film for a hospitality brand.",
+    "image": "/assets/engagement/AF-14_result.webp",
+    "alt": "Northlight Motion project preview",
+    "link": null
+  },
+  {
+    "id": "signal-house",
+    "title": "Signal House",
+    "category": "motion-picture",
+    "year": "2023",
+    "summary": "Launch film and social cutdowns for a product studio.",
+    "image": "/assets/engagement/AF-18_result.webp",
+    "alt": "Signal House project preview",
+    "link": null
+  },
+  {
+    "id": "identity-atlas",
+    "title": "Identity Atlas",
+    "category": "graphic-design",
+    "year": "2024",
+    "summary": "Brand identity system for a boutique consultancy.",
+    "image": "/assets/engagement/AF-8_result.webp",
+    "alt": "Identity Atlas project preview",
+    "link": null
+  },
+  {
+    "id": "form-and-motion",
+    "title": "Form & Motion",
+    "category": "graphic-design",
+    "year": "2026",
+    "summary": "Campaign art direction and visual system for a startup launch.",
+    "image": "/assets/engagement/AF-22_result.webp",
+    "alt": "Form and Motion project preview",
+    "link": null
+  }
+]

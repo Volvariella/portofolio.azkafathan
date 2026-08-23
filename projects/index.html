@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Creative portfolio for a visual storyteller specializing in photography, motion, and design."
+    />
+    <title>Projects | Azka Fathan</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="logo" href="../index.html">Azka Fathan</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="dropdown-toggle" href="../projects">Projects</a>
+              <ul class="dropdown-menu">
+                <li><a href="../projects/photography/">Photography</a></li>
+                <li><a href="../projects/graphic-design/">Graphic Design</a></li>
+                <li><a href="../projects/motion-picture/">Motion Picture</a></li>
+              </ul>
+            </li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2>All projects.</h2>
+          </div>
+
+          <div class="filter-bar" aria-label="Portfolio filters">
+            <button class="filter-button is-active" data-filter="all" type="button">All</button>
+            <button class="filter-button" data-filter="photography" type="button">Photography</button>
+            <button class="filter-button" data-filter="motion-picture" type="button">Motion Picture</button>
+            <button class="filter-button" data-filter="graphic-design" type="button">Graphic Design</button>
+          </div>
+
+          <div class="portfolio-grid" id="portfolioGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/projects.js"></script>
+    <script>
+      (function () {
+        const grid = document.getElementById('portfolioGrid');
+        const buttons = document.querySelectorAll('.filter-button');
+        const validFilters = ['all', 'photography', 'motion-picture', 'graphic-design'];
+        let currentFilter = 'all';
+        let allProjects = [];
+
+        function getFilterFromUrl() {
+          const params = new URLSearchParams(window.location.search);
+          const tab = params.get('tab');
+          return validFilters.includes(tab) ? tab : 'all';
+        }
+
+        function setActiveButton(filter) {
+          buttons.forEach((btn) => {
+            btn.classList.toggle('is-active', btn.dataset.filter === filter);
+          });
+        }
+
+        function applyFilter(filter) {
+          currentFilter = filter;
+          renderCards('portfolioGrid', allProjects, {
+            filter: filter,
+            width: 800,
+            linkResolver: function(p) { return '../projects/' + p.category + '/' + p.link; }
+          });
+          setActiveButton(filter);
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            const url = new URL(window.location);
+            if (filter === 'all') {
+              url.searchParams.delete('tab');
+            } else {
+              url.searchParams.set('tab', filter);
+            }
+            window.history.pushState({}, '', url);
+            applyFilter(filter);
+          });
+        });
+
+        window.addEventListener('popstate', () => {
+          applyFilter(getFilterFromUrl());
+        });
+
+        const initialFilter = getFilterFromUrl();
+
+        fetch('../data/projects.json')
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            allProjects = data;
+            applyFilter(initialFilter);
+          })
+          .catch(function(err) {
+            console.error('Failed to load projects:', err);
+          });
+      })();
+    </script>
+
+    <script src="../script.js"></script>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer__inner">
+        <p>&copy; 2026 Azka Fathan</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="mailto:azkafathan3108@gmail.com">Email</a>
+          <a href="https://instagram.com/cannedsweetcorn" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://behance.net/azka_fathan" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

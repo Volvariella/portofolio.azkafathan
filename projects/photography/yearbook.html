@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yearbook photography project by Azka Fathan." />
+    <title>Yearbook | Azka Fathan</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .gallery {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        aspect-ratio: 4 / 3;
+        background: var(--surface);
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+
+      .gallery__image-wrap {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .gallery__image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        filter: saturate(0.85) contrast(1.05);
+      }
+
+
+
+      .gallery__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius-sm);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-size: 1.2rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .gallery__nav:hover,
+      .gallery__nav:focus-visible {
+        background: rgba(0, 0, 0, 0.85);
+        border-color: var(--accent-purple);
+      }
+
+      .gallery__nav--prev {
+        left: 1rem;
+      }
+
+      .gallery__nav--next {
+        right: 1rem;
+      }
+
+      .gallery__counter {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.82rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .project-detail__header {
+        max-width: 1000px;
+        margin: 0 auto 2rem;
+      }
+
+      .project-detail__header .eyebrow {
+        margin-bottom: 0.5rem;
+      }
+
+      .project-detail__header h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-detail__header p {
+        font-size: 1rem;
+        max-width: 600px;
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          min-height: 100dvh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 3rem 0;
+        }
+
+        .gallery {
+          aspect-ratio: 16 / 9;
+          max-height: 85vh;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .gallery {
+          aspect-ratio: 3 / 4;
+        }
+
+        .gallery__nav {
+          width: 44px;
+          height: 44px;
+          font-size: 1.1rem;
+        }
+
+        .gallery__nav--prev {
+          left: 0.75rem;
+        }
+
+        .gallery__nav--next {
+          right: 0.75rem;
+        }
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="logo" href="../../index.html">Azka Fathan</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="dropdown-toggle" href="../../projects/">Projects</a>
+              <ul class="dropdown-menu">
+                <li><a href="../../projects/photography/">Photography</a></li>
+                <li><a href="../../projects/graphic-design/">Graphic Design</a></li>
+                <li><a href="../../projects/motion-picture/">Motion Picture</a></li>
+              </ul>
+            </li>
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="project-detail__header">
+            <p class="eyebrow">Photography</p>
+            <h1>Yearbook</h1>
+            <p>A documentary portrait series capturing the quiet rituals and unscripted moments of a senior class during their final year.</p>
+            <a class="button button--secondary" href="../../projects/photography/">Back to projects</a>
+          </div>
+
+          <div class="gallery" id="gallery" aria-label="Yearbook image gallery">
+            <div class="gallery__image-wrap" id="galleryImageWrap">
+              <img id="galleryImage" src="" alt="" />
+            </div>
+
+            <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous image">&#10094;</button>
+            <button class="gallery__nav gallery__nav--next" type="button" aria-label="Next image">&#10095;</button>
+          </div>
+
+          <p class="gallery__counter" id="galleryCounter" aria-live="polite">1 / 5</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer__inner">
+        <p>&copy; 2026 Azka Fathan</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="mailto:azkafathan3108@gmail.com">Email</a>
+          <a href="https://instagram.com/cannedsweetcorn" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://behance.net/azka_fathan" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../js/projects.js"></script>
+    <script>
+      const galleryImage = document.getElementById('galleryImage');
+      const prevButton = document.querySelector('.gallery__nav--prev');
+      const nextButton = document.querySelector('.gallery__nav--next');
+      const counter = document.getElementById('galleryCounter');
+      let currentIndex = 0;
+      let galleryImages = [];
+
+      function updateGallery() {
+        if (!galleryImages.length) return;
+        galleryImage.src = galleryImages[currentIndex];
+        galleryImage.alt = 'Gallery image ' + (currentIndex + 1) + ' of ' + galleryImages.length;
+        counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+      }
+
+      function showPrevious() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateGallery();
+      }
+
+      prevButton.addEventListener('click', showPrevious);
+      nextButton.addEventListener('click', showNext);
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          showPrevious();
+        } else if (event.key === 'ArrowRight') {
+          showNext();
+        }
+      });
+
+      fetch('../../data/projects.json')
+        .then(function(res) { return res.json(); })
+        .then(function(projects) {
+          var project = projects.find(function(p) { return p.link === 'yearbook.html'; });
+          if (project && project.gallery && project.gallery.length) {
+            galleryImages = project.gallery;
+            updateGallery();
+          }
+        })
+        .catch(function(err) {
+          console.error('Failed to load gallery:', err);
+        });
+    </script>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
